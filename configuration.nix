@@ -135,14 +135,7 @@ in
     shell = pkgs.fish;
     packages = with pkgs; [
       firefox
-      brave
       feh
-      signal-desktop
-      obsidian
-      bitwarden
-    #  pcloud
-    #  protonmail-bridge
-    #  thunderbird
     ];
   };
 
@@ -170,7 +163,9 @@ in
      xfce.thunar-dropbox-plugin
      xfce.tumbler
      xfce.xfce4-settings
-     xfce.xfce4-terminal       
+     xfce.xfce4-terminal  
+     lxappearance
+     orchis-theme
   ];
 
 
@@ -196,6 +191,8 @@ in
       wdisplays
       networkmanagerapplet
       libnotify
+      dunst
+      pavucontrol
     ];
   };
 
