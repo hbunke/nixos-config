@@ -187,12 +187,13 @@ in
       wl-clipboard
       bemenu
       rofi
-      mako
+      # mako
       wdisplays
       networkmanagerapplet
       libnotify
       dunst
       pavucontrol
+      light
     ];
   };
 
@@ -240,6 +241,16 @@ in
     source-sans-pro
     font-awesome
   ];
+
+  security.sudo.extraRules = [
+    { 
+      groups = [ "wheel"];
+      commands = [
+      { command = "/home/bunke/.nix-profile/bin/light"; options = [ "NOPASSWD" ]; }
+      ];
+    }
+  ];
+      
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
