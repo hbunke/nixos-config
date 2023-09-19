@@ -178,6 +178,7 @@ in
      orchis-theme
      evince
      python3Full
+     python310Packages.pip
   ];
 
 
