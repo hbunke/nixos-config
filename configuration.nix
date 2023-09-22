@@ -43,6 +43,13 @@ let
         '';
   };
 
+  # current version of pcloud in nixpkgs (1.12.0) is broken, so we use
+  # version 1.11.0 here, resp. the nixpkgs state that contains that version
+  # You can search for versions here: https://lazamar.co.uk/nix-versions/
+  #pcloud_pkgs = import (builtins.fetchTarball {
+  #  url = "https://github.com/NixOS/nixpkgs/archive/8ad5e8132c5dcf977e308e7bf5517cc6cc0bf7d8.tar.gz";
+  # }) {};
+
 in
 
 {
@@ -136,6 +143,20 @@ in
     packages = with pkgs; [
       firefox
       feh
+      vscode
+      brave
+      firefox
+      google-chrome
+      obsidian
+      signal-desktop
+      xfce.xfce4-terminal
+      evince
+      webex
+      bitwarden
+      orchis-theme
+      logseq
+      # pcloud_pkgs.pcloud # version 1.11.0; nixpkgs version defined above
+
     ];
   };
 
@@ -232,7 +253,7 @@ in
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     fira-code
     fira-code-symbols
     source-code-pro
@@ -240,6 +261,7 @@ in
     noto-fonts
     source-sans-pro
     font-awesome
+    cantarell-fonts
   ];
 
   security.sudo.extraRules = [
