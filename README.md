@@ -8,6 +8,11 @@ be in local.nix.
 local.nix
 ```nix
 {
+    imports = [
+    # services only for this machine    
+    #     ./samba.nix
+    ];
+    
     networking.hostName = "<name>"; # Define your hostname.
   
     # This value determines the NixOS release from which the default
