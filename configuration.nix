@@ -182,7 +182,12 @@
     gnomeExtensions.night-theme-switcher
     gnomeExtensions.printers
     distrobox
+    kitty
+    font-awesome
   ];
+
+  programs.hyprland.enable = true; # enable Hyprland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   services.flatpak.enable = true;
 
