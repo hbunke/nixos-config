@@ -8,7 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./local.nix 
+      ./sway.nix
+      ./local.nix
     ];
 
 
@@ -20,7 +21,7 @@
   #boot.extraModulePackages = [ config.boot.kernelPackages.fuse ];
   boot.kernelModules = [ "fuse" ];
 
-  # networking.hostName = "yoda"; # hostname defined in local.nix!!!
+  # networking.hostName = "yoda"; # hostname defined in <machine>.nix!!!
 
   
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
