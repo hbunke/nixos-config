@@ -9,7 +9,6 @@
   services.samba = {
     package = pkgs.samba4Full;
     enable = true;
-    securityType = "user";
     openFirewall = true;
     settings = {
       global = {
@@ -24,6 +23,7 @@
         "hosts deny" = "0.0.0.0/0";
         "guest account" = "nobody";
         "map to guest" = "bad user";
+      
       };
       "scan" = {
         "path" = "/home/bunke/SCANS";
