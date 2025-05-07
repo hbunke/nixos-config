@@ -58,10 +58,14 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
-  # this also might be obsolete w/o evolution 
+  # this also might be obsolete w/o evolution, and in Gnome 
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gnome ];
+    extraPortals = [ 
+      pkgs.xdg-desktop-portal-gnome 
+      pkgs.xdg-desktop-portal-gtk 
+    ];
+    config.common.default = "gtk";
   };
 
   # Configure keymap in X11
@@ -142,7 +146,7 @@
     extraGroups = [ "networkmanager" "wheel" "fuse" ];
     shell = pkgs.fish;
     packages = with pkgs; [
-      logseq
+      # logseq # flatpak
       syncthing
       ptyxis
       webex # webex works flawlessly under nixos, while under fedora it even refuses to start 
@@ -153,9 +157,9 @@
       filen-desktop
       fuse
       pcloud
-      brave
+      # brave  # better via flatpak
       bitwarden
-      proton-pass
+      # proton-pass # flatpak
       signal-desktop
       syncthingtray
       gnome-extension-manager
@@ -187,7 +191,7 @@
     font-awesome
   ];
 
-  programs.hyprland.enable = true; # enable Hyprland
+  #programs.hyprland.enable = true; # enable Hyprland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   services.flatpak.enable = true;
