@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./sway.nix
-      ./local.nix
+      ./local.nix  # local.nix is symlinked to <machine>.nix
     ];
 
 
@@ -165,6 +165,8 @@
       gnome-extension-manager
       remmina
       # protonmail-desktop # beta, uralte webversion
+      protonmail-bridge
+      pandoc
     
     ];
   };
@@ -210,7 +212,10 @@
   services.openssh.enable = true;
 
 
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
     
+  '';
  
   
 
