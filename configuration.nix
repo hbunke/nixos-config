@@ -18,8 +18,15 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  #boot.extraModulePackages = [ config.boot.kernelPackages.fuse ];
+
   boot.kernelModules = [ "fuse" ];
+
+  # this makes installation of kernel modules, solaar, and configuration of udev
+  # rules obsolete :-)
+  hardware.logitech.wireless = {
+    enable = true;
+    enableGraphical = true;
+  };
 
   # networking.hostName = "yoda"; # hostname defined in <machine>.nix!!!
 
@@ -136,8 +143,10 @@
   programs.fish.enable = true;
   
 
+
   # create fuse group
   users.groups.fuse = { };
+  
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.bunke = {
@@ -146,26 +155,19 @@
     extraGroups = [ "networkmanager" "wheel" "fuse" ];
     shell = pkgs.fish;
     packages = with pkgs; [
-      # logseq # flatpak
       syncthing
       ptyxis
       webex # webex works flawlessly under nixos, while under fedora it even refuses to start 
       element-desktop
       fractal
-      #evolution
-      #evolution-ews
       filen-desktop
       fuse
       pcloud
-      # brave  # better via flatpak
       bitwarden
       # proton-pass # flatpak
       signal-desktop
       syncthingtray
       gnome-extension-manager
-      remmina
-      # protonmail-desktop # beta, uralte webversion
-      protonmail-bridge
       pandoc
     
     ];
@@ -188,9 +190,11 @@
     nerd-fonts.commit-mono
     gnomeExtensions.night-theme-switcher
     gnomeExtensions.printers
+    gnomeExtensions.solaar-extension
     distrobox
     kitty
     font-awesome
+    # brave ## better with flatpak
   ];
 
   #programs.hyprland.enable = true; # enable Hyprland
@@ -217,7 +221,7 @@
     
   '';
  
-  
+ 
 
 
   # Open ports in the firewall.
