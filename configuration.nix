@@ -7,9 +7,9 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./sway.nix
-      ./local.nix  # local.nix is symlinked to <machine>.nix
+      #./hardware-configuration.nix
+      #./sway.nix
+      #./local.nix  # local.nix is symlinked to <machine>.nix
     ];
 
 
