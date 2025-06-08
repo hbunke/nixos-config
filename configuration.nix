@@ -163,12 +163,15 @@
       filen-desktop
       fuse
       pcloud
+      brave  # better via flatpak?
       bitwarden
-      # proton-pass # flatpak
+      proton-pass # flatpak?
       signal-desktop
       syncthingtray
       gnome-extension-manager
+      # protonmail-desktop # beta, uralte webversion
       pandoc
+      tutanota-desktop
     
     ];
   };
