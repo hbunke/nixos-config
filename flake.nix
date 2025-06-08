@@ -12,6 +12,9 @@
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
+          ./yoda/yoda.nix
+          ./yoda/hardware-configuration.nix 
+          ./samba.nix
         ];
       };
     

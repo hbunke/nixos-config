@@ -1,9 +1,7 @@
-# local config (hostname)
-# !SYMLINK! this to local.nix
-
 {
+    # imports is actually obsolete if we use flake.nix
     imports = [
-        ./samba.nix
+               
     ];
     
     networking.hostName = "yoda"; # Define your hostname.
