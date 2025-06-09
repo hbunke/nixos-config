@@ -7,7 +7,9 @@
   };
 
   outputs = { self, nixpkgs, flake-utils, ... }: {
+    
     nixosConfigurations = {
+      
       yoda = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
@@ -26,6 +28,7 @@
           ./defiant/hardware-configuration.nix
         ];
       };
+   
     };
   };
 }

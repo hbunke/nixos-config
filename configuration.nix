@@ -160,7 +160,7 @@
       webex # webex works flawlessly under nixos, while under fedora it even refuses to start 
       element-desktop
       fractal
-      filen-desktop
+      
       fuse
       pcloud
       brave  # better via flatpak?
@@ -169,9 +169,9 @@
       signal-desktop
       syncthingtray
       gnome-extension-manager
-      # protonmail-desktop # beta, uralte webversion
       pandoc
       tutanota-desktop
+      filen-desktop
     
     ];
   };
@@ -195,8 +195,8 @@
     gnomeExtensions.printers
     gnomeExtensions.solaar-extension
     distrobox
-    kitty
     font-awesome
+    filen-desktop
     # brave ## better with flatpak
   ];
 
@@ -234,6 +234,6 @@
   # networking.firewall.enable = false;
 
 
-  # system.stateVersion = "24.11"; # defined in local.nix
+  # system.stateVersion = "24.11"; # defined in <hostname>.nix, so it can be different for each machine
   
 }
