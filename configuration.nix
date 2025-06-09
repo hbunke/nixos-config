@@ -172,6 +172,7 @@
       pandoc
       tutanota-desktop
       filen-desktop
+      obsidian
     
     ];
   };
