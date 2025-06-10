@@ -8,28 +8,33 @@
 
   outputs = { self, nixpkgs, flake-utils, ... }: {
     
-    nixosConfigurations = {
+    nixosConfigurations = with nixpkgs.lib; {
       
-      yoda = nixpkgs.lib.nixosSystem {
+      yoda = nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-          ./yoda/yoda.nix
           ./yoda/hardware-configuration.nix 
           ./samba.nix
+          {
+            networking.hostName = "yoda"; # Define your hostname.
+            system.stateVersion = "24.11"; # Did you read the comment?
+          }
         ];
       };
     
-      defiant = nixpkgs.lib.nixosSystem {
+      defiant = nixosSystem {
         system = "x86_64-linux";
         modules = [
           ./configuration.nix
-          ./defiant/defiant.nix
           ./defiant/hardware-configuration.nix
+          {
+            networking.hostName = "defiant"; # Define your hostname.
+            system.stateVersion = "24.11"; # Did you read the comment?
+          }
         ];
       };
-   
-    };
+   };
   };
 }
 

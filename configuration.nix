@@ -62,8 +62,8 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
 
   # this also might be obsolete w/o evolution, and in Gnome 
   xdg.portal = {
@@ -160,10 +160,8 @@
       webex # webex works flawlessly under nixos, while under fedora it even refuses to start 
       element-desktop
       fractal
-      
       fuse
       pcloud
-      brave  # better via flatpak?
       bitwarden
       proton-pass # flatpak?
       signal-desktop
