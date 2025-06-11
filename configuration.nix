@@ -171,6 +171,7 @@
       tutanota-desktop
       filen-desktop
       obsidian
+      gimp
     
     ];
   };
