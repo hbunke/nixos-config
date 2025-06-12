@@ -163,7 +163,7 @@
       fuse
       pcloud
       bitwarden
-      proton-pass # flatpak?
+      # proton-pass # too small fonts, better with flatpak
       signal-desktop
       syncthingtray
       gnome-extension-manager
