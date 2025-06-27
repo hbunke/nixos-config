@@ -16,6 +16,7 @@
           ./configuration.nix
           ./yoda/hardware-configuration.nix 
           ./samba.nix
+          # ./sway.nix
           {
             networking.hostName = "yoda"; # Define your hostname.
             system.stateVersion = "24.11"; # Did you read the comment?
