@@ -198,7 +198,6 @@
     font-awesome
     filen-desktop
     # brave ## better with flatpak
-    protonmail-bridge-gui
   ];
 
   #programs.hyprland.enable = true; # enable Hyprland
