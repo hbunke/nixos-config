@@ -28,7 +28,7 @@
     enableGraphical = true;
   };
 
-  # networking.hostName = "yoda"; # hostname defined in <machine>.nix!!!
+  # networking.hostName = "yoda"; # hostname defined in flake.nix
 
   
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
