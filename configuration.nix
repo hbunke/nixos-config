@@ -62,8 +62,10 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
-  services.desktopManager.gnome.enable = true;
+  #services.displayManager.gdm.enable = true;
+  #services.desktopManager.gnome.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # this also might be obsolete w/o evolution, and in Gnome 
   xdg.portal = {
@@ -155,23 +157,7 @@
     extraGroups = [ "networkmanager" "wheel" "fuse" ];
     shell = pkgs.fish;
     packages = with pkgs; [
-      syncthing
-      ptyxis
-      webex # webex works flawlessly under nixos, while under fedora it even refuses to start 
-      element-desktop
-      fractal
-      fuse
-      pcloud
-      bitwarden
-      # proton-pass # too small fonts, better with flatpak
-      signal-desktop
-      syncthingtray
-      gnome-extension-manager
-      pandoc
-      tutanota-desktop
-      filen-desktop
-      obsidian
-      gimp
+      # all in home-manager or in systemPackages
     
     ];
   };
@@ -194,9 +180,12 @@
     gnomeExtensions.night-theme-switcher
     gnomeExtensions.printers
     gnomeExtensions.solaar-extension
-    distrobox
-    font-awesome
-    filen-desktop
+    syncthing
+    ptyxis
+    fuse
+    pcloud
+    syncthingtray
+    gnome-extension-manager
     # brave ## better with flatpak
   ];
 
