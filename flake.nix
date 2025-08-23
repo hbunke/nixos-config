@@ -30,6 +30,7 @@
         modules = [
           ./configuration.nix
           ./defiant/hardware-configuration.nix
+          ./sway.nix
           {
             networking.hostName = "defiant"; # Define your hostname.
             system.stateVersion = "24.11"; # Did you read the comment?
