@@ -186,7 +186,9 @@
     pcloud
     syncthingtray
     gnome-extension-manager
-    # brave ## better with flatpak
+    desktop-file-utils
+    busybox
+    ulauncher
   ];
 
   #programs.hyprland.enable = true; # enable Hyprland
