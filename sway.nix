@@ -28,6 +28,7 @@
       dunst
       pavucontrol
       light
+      blueman
     ];
   };
 
