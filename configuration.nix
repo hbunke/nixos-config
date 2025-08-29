@@ -189,6 +189,7 @@
     desktop-file-utils
     busybox
     ulauncher
+    dig
   ];
 
   #programs.hyprland.enable = true; # enable Hyprland
