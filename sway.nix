@@ -33,5 +33,6 @@
   };
 
   security.polkit.enable = true;
+  xdg.portal.config.common.default = "wlr";
 
 }
