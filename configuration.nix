@@ -88,6 +88,7 @@
   # failed configs for Evolution; now installed via flatpak, but it won't hurt
   # to have those configs here, will it?
   services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
   programs.dconf.enable = true;
   services.gnome.evolution-data-server.enable = true;
   services.gnome.gnome-online-accounts.enable = true;
@@ -191,6 +192,7 @@
     busybox
     ulauncher
     dig
+    libsecret
   ];
 
   #programs.hyprland.enable = true; # enable Hyprland
