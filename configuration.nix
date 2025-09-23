@@ -195,6 +195,12 @@
     libsecret
   ];
 
+  # evolution only does work when installed here
+  programs.evolution = {
+    enable = true; 
+    plugins = [ pkgs.evolution-ews ]; 
+  };
+
   #programs.hyprland.enable = true; # enable Hyprland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -219,7 +225,8 @@
     
   '';
  
- 
+
+  
 
 
   # Open ports in the firewall.
