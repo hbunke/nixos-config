@@ -5,14 +5,8 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      #./hardware-configuration.nix
-      #./sway.nix
-      #./local.nix  # local.nix is symlinked to <machine>.nix
-    ];
-
-
+  ## imports via machine specific flakes
+  # imports = [ ];
 
  # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -85,8 +79,7 @@
   };
 
 
-  # failed configs for Evolution; now installed via flatpak, but it won't hurt
-  # to have those configs here, will it?
+  # configs for Evolution (and perhaps others)
   services.gnome.gnome-keyring.enable = true;
   programs.seahorse.enable = true;
   programs.dconf.enable = true;
@@ -94,6 +87,12 @@
   services.gnome.gnome-online-accounts.enable = true;
   services.gvfs.enable = true;
   
+  # evolution only does work when installed here
+  programs.evolution = {
+    enable = true; 
+    plugins = [ pkgs.evolution-ews ]; 
+  };
+
 
   # Configure console keymap
   console.keyMap = "de-latin1-nodeadkeys";
@@ -195,11 +194,7 @@
     libsecret
   ];
 
-  # evolution only does work when installed here
-  programs.evolution = {
-    enable = true; 
-    plugins = [ pkgs.evolution-ews ]; 
-  };
+  
 
   #programs.hyprland.enable = true; # enable Hyprland
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

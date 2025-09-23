@@ -2,9 +2,9 @@
   description = "my first nixos configuration with flakes";
 
   inputs = {
-    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; # oder z. B. "nixos-24.05"
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable"; 
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05"; 
-    flake-utils.url = "github:numtide/flake-utils";
+    flake-utils.url = "github:numtide/flake-utils"; # brauch ich die?
   };
 
   outputs = { self, nixpkgs, flake-utils, ... }: {
