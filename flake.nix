@@ -37,6 +37,19 @@
           }
         ];
       };
+
+      tib-laptop = nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          ./configuration.nix
+          ./tib-laptop/hardware-configuration.nix
+          ./sway.nix
+          {
+            networking.hostName = "nb-lxzt1863"; # Define your hostname.
+            system.stateVersion = "25.05"; # Did you read the comment?
+          }
+        ];
+      };
    };
   };
 }
