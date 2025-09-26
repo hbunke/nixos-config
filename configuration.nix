@@ -87,6 +87,10 @@
   services.gnome.gnome-online-accounts.enable = true;
   services.gvfs.enable = true;
   
+  
+  # Install firefox.
+  programs.firefox.enable = true;
+  
   # evolution only does work when installed here
   programs.evolution = {
     enable = true; 
@@ -163,8 +167,7 @@
     ];
   };
 
-  # Install firefox.
-  programs.firefox.enable = true;
+  
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
