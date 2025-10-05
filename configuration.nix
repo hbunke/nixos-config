@@ -195,6 +195,7 @@
     ulauncher
     dig
     libsecret
+    gnupg
   ];
 
   
