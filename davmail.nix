@@ -15,17 +15,19 @@
       davmail.ssl.nosecureimap = false;
       davmail.ssl.nosecureldap = false;
       davmail.ssl.nosecuresmtp = false;
-
-      #### workaround missing certificate
-      davmail.server.certificate = "default";
       davmail.ssl.nosecure = false;
+      
+      davmail.server = {
+        enable = true;
+
+        # this is host specific! 
+        certificate.hash = "E4:35:55:22:6E:C0:6A:E7:E1:E5:38:12:E9:68:CF:3A:31:74:E1:30"; 
+      };
 
       # Exchange details TIB
       davmail.mode = "Auto";
       davmail.defaultDomain = "TIB";
       
-      # Don't start GUI
-      davmail.server = true;
       
       # Delete messages immediately on IMAP STORE \Deleted flag
       davmail.imapAutoExpunge = false;
