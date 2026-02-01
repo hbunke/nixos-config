@@ -196,6 +196,7 @@
     dig
     libsecret
     gnupg
+    mediawriter
   ];
 
   
