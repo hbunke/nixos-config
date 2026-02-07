@@ -8,6 +8,11 @@
   ## imports via machine specific flakes
   # imports = [ ];
 
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes    
+  '';
+
+
  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -23,8 +28,6 @@
   };
 
   # networking.hostName = "yoda"; # hostname defined in flake.nix
-
-  
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -56,21 +59,22 @@
   services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
-  #services.displayManager.gdm.enable = true;
-  #services.desktopManager.gnome.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  services.displayManager.gdm.enable = true;
+  services.desktopManager.gnome.enable = true;
+  ### old < 25.11.
+  #services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
 
   # this also might be obsolete w/o evolution, and in Gnome 
-  xdg.portal = {
-    enable = true;
-    extraPortals = [ 
-      pkgs.xdg-desktop-portal-gnome 
-      pkgs.xdg-desktop-portal-gtk 
-      pkgs.xdg-desktop-portal-wlr
-    ];
-    # config.common.default = "gtk"; # in sway.nix
-  };
+  # xdg.portal = {
+  #   enable = true;
+  #   extraPortals = [ 
+  #     pkgs.xdg-desktop-portal-gnome 
+  #     pkgs.xdg-desktop-portal-gtk 
+  #     pkgs.xdg-desktop-portal-wlr
+  #   ];
+  #   # config.common.default = "gtk"; # in sway.nix
+  # };
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -180,11 +184,9 @@
     git
     adwaita-fonts
     podman-compose
-    nerd-fonts.commit-mono
     gnomeExtensions.night-theme-switcher
     gnomeExtensions.printers
     gnomeExtensions.solaar-extension
-    syncthing
     ptyxis
     fuse
     pcloud
@@ -192,11 +194,16 @@
     gnome-extension-manager
     desktop-file-utils
     busybox
-    ulauncher
     dig
     libsecret
     gnupg
     mediawriter
+    filen-desktop
+    ulauncher
+    orchis-theme
+    zed-editor
+    pango
+
   ];
 
   
@@ -220,14 +227,7 @@
   services.openssh.enable = true;
 
 
-  nix.extraOptions = ''
-    experimental-features = nix-command flakes
-    
-  '';
- 
-
-  
-
+   
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
